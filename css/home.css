@@ -207,14 +207,14 @@ a.postLink {
   padding: 10px;
 }
 
-.reactPost > i {
+.reactPost i {
   margin:0 10px;
   cursor: pointer;
   color: #4f5c72;
   transition: all ease .5s;
 }
 
-.reactPost > i:hover {
+.reactPost i:hover {
   color: #F26448;
 }
 
@@ -379,4 +379,24 @@ img.output {
   position: absolute;
   right: 0;
   cursor: pointer;
+}
+
+.borrar {
+  display: none;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 25%;
+  height: 200px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  z-index: 1;
+  top: 38%;
+  left: 37.5%;
+}
+
+.borrar > div {
+  display: flex;
 }

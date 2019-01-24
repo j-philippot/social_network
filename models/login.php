@@ -20,7 +20,7 @@ if (isset($_POST['usu-existe']) && isset($_POST['contra-usu-existe'])) {
                 $_SESSION['logged_in'] = true;
                 $_SESSION['nombre'] = $user;
                 // $_SESSION["timeout"] = time();
-                header("Location: ../home.php?user=$user");
+                header("Location: ../home.php");
             } else {
                 // Error de contraseña
                 die('Ha habido un error. Comprueba tus datos.');

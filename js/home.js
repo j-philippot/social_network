@@ -2,10 +2,12 @@ const titulo = document.querySelector(".tituloPublicacion");
 const boton = document.querySelector(".botonPublicar");
 const fondo = document.querySelector(".fondoModal");
 const publicar = document.querySelector(".publicar");
-const output = document.querySelector('.output');
+const output = document.querySelector(".output");
 const cancelar = document.querySelector(".cancelar");
 const archivo = document.querySelector(".inputfile");
 const formulario = document.querySelector("#formularioPost");
+const divBorrar = document.querySelector(".borrar");
+const cancelarBorrar = document.querySelector(".noBorrar");
 
 function modalOn() {
 	titulo.classList.add("activo");
@@ -51,4 +53,13 @@ function loadFile(event) {
     	archivo.value = "";
     	cancelar.style.display = "none";
     })
+}
+
+function borrar() {
+	fondo.classList.add("activo");
+	divBorrar.style.display = "flex";
+	cancelarBorrar.addEventListener("click", function() {
+		fondo.classList.remove("activo");
+		divBorrar.style.display = "none";
+	})
 }

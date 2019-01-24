@@ -112,6 +112,7 @@ class post
         printf("Error: %s.\n", $stmt->error);
         return false;
     }
+    */
 
     // Borrar post (DELETE)
 
@@ -132,7 +133,6 @@ class post
         printf("Error: %s.\n", $stmt->error);
         return false;
     }
-    */
 }
 
 ?>

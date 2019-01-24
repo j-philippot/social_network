@@ -22,16 +22,23 @@
     }
     ?>
     <div class="reactPost">
-    	<i class="far fa-heart" title="Me gusta"></i>
-    	<i class="far fa-share-square" title="Compartir"></i>
+        <a href="#"><i class="far fa-heart" title="Me gusta"></i></a>
+        <a href="#"><i class="far fa-share-square" title="Compartir"></i></a>
     	<?php
     	if($single_post->username == $usuario->username){
     	?>
-    	<i class="far fa-edit" title="Editar"></i>
-    	<i class="far fa-trash-alt" title="Eliminar"></i>
+        <a href="#"><i class="far fa-edit" title="Editar"></i></a>
+        <i class="far fa-trash-alt" title="Eliminar" onclick="borrar()"></i>
     	<?php
     	}
     	?>
     </div>
     <div class="commentPost"></div>
+    <div class="borrar">
+        <p>¿Deseas borrar el post?</p>
+        <div>
+            <button type="button" class="noBorrar">No</button>
+            <a href="post/delete.php?id=<?php echo $single_post->id; ?>">Sí</a>
+        </div>
+    </div>
 </div>

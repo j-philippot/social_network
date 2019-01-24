@@ -87,7 +87,6 @@ if (isset($_SESSION["timeout"])) {
             <div class="botonPublicar">
               <button class="cerrarPost" type="button" onclick="modalOff()">Cerrar</button>
               <input type="hidden" name="autor" value="<?php echo $usuario->id; ?>">
-              <input type="hidden" name="nombreAutor" value="<?php echo $usuario->username; ?>">
               <input type="submit" name="publicarPost" class="publicarPost" value="Publicar">
             </div>
           </form> 

@@ -56,7 +56,7 @@ if (isset($_POST['nickname'], $_POST['correo-usu'], $_POST['contra-usu-1'])) {
     $_SESSION['logged_in'] = true;
     $_SESSION['nombre'] = $Uname;
     // $_SESSION["timeout"] = time();
-    header("Location: ../home.php?user=$Uname");
+    header("Location: ../home.php");
 } else {
     // Acceso directo, sin pasar por formulario:
     header("Location: ../index.php");

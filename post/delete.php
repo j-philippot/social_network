@@ -1,33 +1,31 @@
 <?php
-// Headers Rest
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
-header('Access-Control-Allow-Methods: DELETE');
-header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
+if(isset($_GET['id'])){
+	require_once('../config/Database.php');
+	require_once('../models/post.php');
 
-require_once('../../config/database.php');
-require_once('../../models/post.php');
+	// Instanciar el objeto DB y conectar
 
-// Instanciar el objeto DB y conectar
+	$database = new database();
+	$db = $database->conecta();
 
- $database = new database();
- $db = $database->conecta();
+	// Instanciar el objeto Post
 
-// Instanciar el objeto Post
+	$post = new post($db);
 
-$post = new post($db);
+	// Obtener los datos insertados
+	$deleted_post_id = $_GET['id'];
 
-// Obtener los datos insertados
-$data = json_decode(file_get_contents("php://input"));
+	// Obtener el id a actualizar
 
-// Obtener el id a actualizar
+	$post->id = $deleted_post_id;
 
-$post->id = $data->id;
-
-// Borrar post
-if($post->delete()){
-    echo json_encode(['mensaje' => 'Post eliminado']);
-}else{
-    echo json_encode(['mensaje' => 'Post no eliminado']);
+	// Borrar post
+	if($post->delete()){
+	    // Enviar a home con mensaje de éxito
+	    header('Location: ../home.php');
+	}else{
+	    // Enviar a home con mensaje de error
+	    header('Location: ../home.php');
+	}
 }
 ?>
