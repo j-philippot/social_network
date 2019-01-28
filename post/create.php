@@ -1,6 +1,5 @@
 <?php
 if(isset($_POST['publicarPost'])){
-
 	require_once('../config/Database.php');
 	require_once('../models/post.php');
 
