@@ -27,7 +27,7 @@
     	<?php
     	if($single_post->username == $usuario->username){
     	?>
-        <a href="#"><i class="far fa-edit" title="Editar"></i></a>
+        <a href="home.php?update_id=<?php echo $single_post->id; ?>"><i class="far fa-edit" title="Editar"></i></a>
         <i class="far fa-trash-alt" title="Eliminar" onclick="borrar()"></i>
     	<?php
     	}

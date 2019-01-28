@@ -52,7 +52,7 @@ function loadFile(event) {
     	output.src= "";
     	archivo.value = "";
     	cancelar.style.display = "none";
-    })
+    });
 }
 
 function borrar() {
@@ -61,5 +61,5 @@ function borrar() {
 	cancelarBorrar.addEventListener("click", function() {
 		fondo.classList.remove("activo");
 		divBorrar.style.display = "none";
-	})
+	});
 }
