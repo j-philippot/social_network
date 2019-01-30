@@ -6,8 +6,6 @@ const output = document.querySelector(".output");
 const cancelar = document.querySelector(".cancelar");
 const archivo = document.querySelector(".inputfile");
 const formulario = document.querySelector("#formularioPost");
-const divBorrar = document.querySelector(".borrar");
-const cancelarBorrar = document.querySelector(".noBorrar");
 
 function modalOn() {
 	titulo.classList.add("activo");
@@ -55,11 +53,29 @@ function loadFile(event) {
     });
 }
 
-function borrar() {
+function loadEditedFile(numero, event) {
+	const editedOutput = document.getElementById("muestra" + numero);
+    editedOutput.src = URL.createObjectURL(event.target.files[0]);
+    cancelar.style.display = "block";
+    cancelar.addEventListener("click", function() {
+    	editedOutput.src= "";
+    	archivo.value = "";
+    	cancelar.style.display = "none";
+    });
+}
+
+function borrar(borrarId) {
+	const divBorrar = document.getElementById("borrar" + borrarId);
+	const cancelarBorrar = document.getElementById("noBorrar" + borrarId);
 	fondo.classList.add("activo");
 	divBorrar.style.display = "flex";
 	cancelarBorrar.addEventListener("click", function() {
 		fondo.classList.remove("activo");
 		divBorrar.style.display = "none";
 	});
+}
+
+function editar(editarId) {
+	const modalEditar = document.getElementById("editar" + editarId);
+	modalEditar.style.display = "block";
 }
