@@ -54,14 +54,7 @@
           <textarea name="escribirPost" placeholder="Escribe lo que quieras, <?php echo $single_post->username; ?>" maxlength="255" oninput="autoExpand(this)"><?php echo $single_post->body; ?></textarea>
         </div>
         <div class="formatosPost">
-          <input type="file" class="inputfile" title="Elige un archivo para subir" value="
-          <?php 
-            if(is_null($single_post->post_img)) {
-                echo '';
-            } else {
-                echo $single_post->post_img;
-            }
-          ?>" name="updatedFile" accept="image/*" multiple="1" id="file" onchange="loadEditedFile(<?php echo $single_post->id; ?>, event)">
+          <input type="file" class="inputfile" title="Elige un archivo para subir" name="updatedFile" accept="image/*" multiple="1" id="file" onchange="loadEditedFile(<?php echo $single_post->id; ?>, event)">
           <label for="file"><i class="fas fa-image"></i>Foto</label>
         </div>
         <div class="botonPublicar">
